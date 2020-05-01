@@ -1,8 +1,16 @@
 import React from 'react';
 
+import Holder from './components/Holder';
+import { TaskProvider } from './services/TaskContext';
+
+import GlobalStyle from './styles/global';
+
 function App() {
   return (
-    <h1>Routines</h1>
+    <TaskProvider>
+      <Holder />
+      <GlobalStyle />
+    </TaskProvider>
   );
 }
 
