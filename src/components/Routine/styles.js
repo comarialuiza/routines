@@ -27,6 +27,10 @@ export const Task = styled.li`
     display: flex;
     align-items: center;
     justify-content: flex-start;
+
+    &#completed {
+        color: red;
+    }
 `;
 
 export const Checkbox = styled.span`
@@ -36,6 +40,7 @@ export const Checkbox = styled.span`
     border: 1px solid #333;
     display: block;
     margin-right: 8px;
+    cursor: pointer;
 `;
 
 export const Content = styled.p`
