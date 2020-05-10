@@ -1,31 +1,8 @@
 import React, { useState, createContext } from 'react';
 
-export const TaskContext = createContext();
+export const NightContext = createContext();
 
-export const TaskProvider = props => {
-    const [ morningRoutine, setMorningRoutine ] = useState([
-        {
-            id: 1,
-            content: 'Drink water',
-            completed: false
-        },
-        {
-            id: 2,
-            content: 'Wash face',
-            completed: false
-        },
-        {
-            id: 3,
-            content: 'Do yoga',
-            completed: false
-        },
-        {
-            id: 4,
-            content: 'Eat breakfast',
-            completed: false
-        }
-    ]);
-
+export const NightProvider = props => {
     const [ nightRoutine, setNightRoutine ] = useState([
         {
             id: 1,
@@ -52,11 +29,12 @@ export const TaskProvider = props => {
             content: 'Sleep',
             completed: false
         }
-    ])
+    ]);
+
 
     return(
-        <TaskContext.Provider value={{ morningRoutine, nightRoutine }} >
+        <NightContext.Provider value={[ nightRoutine, setNightRoutine ]} >
             { props.children }
-        </TaskContext.Provider>
+        </NightContext.Provider>
     );
 }

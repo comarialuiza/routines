@@ -1,16 +1,19 @@
 import React from 'react';
 
 import Holder from './components/Holder';
-import { TaskProvider } from './services/TaskContext';
+import { MorningProvider } from './services/MorningContext';
+import { NightProvider } from './services/NightContext';
 
 import GlobalStyle from './styles/global';
 
 function App() {
   return (
-    <TaskProvider>
+    <MorningProvider>
+    <NightProvider>
       <Holder />
       <GlobalStyle />
-    </TaskProvider>
+    </NightProvider>
+    </MorningProvider>
   );
 }
 
