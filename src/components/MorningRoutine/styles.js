@@ -26,10 +26,10 @@ export const Task = styled.li`
     line-height: 15px;
     display: flex;
     align-items: center;
-    justify-content: space-between;;
+    justify-content: space-between;
 
     &#completed {
-        color: red;
+        opacity: 0.5;
     }
 `;
 

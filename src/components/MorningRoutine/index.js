@@ -19,7 +19,10 @@ export default function Routine({ title, tasks }) {
     }
 
     const handleCompleteTask = id => {
-        /* setMorningRoutine(morningRoutine.map(routine => routine.id === id ? routine.completed: true)); */
+        const index = morningRoutine.findIndex(el => el.id === id);
+        let newMorningRoutine = [...morningRoutine];
+        newMorningRoutine[index] = {...newMorningRoutine[index], completed: true};
+        setMorningRoutine(newMorningRoutine);
     }
 
     const handleAddTask = e => {
@@ -65,7 +68,11 @@ export default function Routine({ title, tasks }) {
 
             <ul>
                 { morningRoutine.map(task => (
-                    <Task key={ task.id }><Checkbox onClick={ () => handleCompleteTask(task.id) } /><Content>{ task.content }</Content><Delete type="button" onClick={ () => handleDeleteTask(task.id) }><FiX /></Delete></Task>
+                    <Task key={ task.id } id={ task.completed ? 'completed' : 'not-completed' }>
+                        <Checkbox onClick={ () => handleCompleteTask(task.id) } />
+                        <Content>{ task.content }</Content>
+                        <Delete type="button" onClick={ () => handleDeleteTask(task.id) }><FiX /></Delete>
+                    </Task>
                 )) }
             </ul>
         </Container>
