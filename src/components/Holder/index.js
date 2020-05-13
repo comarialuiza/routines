@@ -1,13 +1,19 @@
 import React, { useContext } from 'react';
 
 import { Container } from './styles';
-import MorningRoutine from './../MorningRoutine';
+import Routine from './../Routine';
+import { MorningContext } from './../../services/MorningContext';
+import { NightContext } from './../../services/NightContext';
 
 export default function Holder() {
+    const [ morningRoutine, setMorningRoutine ] = useContext(MorningContext);
+    const [ nightRoutine, setNightRoutine ] = useContext(NightContext);
+
+
     return(
         <Container>
-            <MorningRoutine />
-            { /* <Routine title={ 'Night' } tasks={ nightRoutine } /> */ }
+            <Routine title={ 'Morning' }  tasks={ morningRoutine } setTasks={ setMorningRoutine } />
+            <Routine title={ 'Night' } tasks={ nightRoutine } setTasks={ setNightRoutine } />
         </Container>
     );
 }

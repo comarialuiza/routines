@@ -21,11 +21,6 @@ export const NightProvider = props => {
         },
         {
             id: 4,
-            content: 'Stop using phone',
-            completed: false
-        },
-        {
-            id: 5,
             content: 'Sleep',
             completed: false
         }
