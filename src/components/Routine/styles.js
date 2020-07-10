@@ -86,7 +86,7 @@ export const AddTask = styled.div`
         display: flex;
         align-items: center;
         justify-content: space-between;
-        width: calc(100% - 50px);
+        width: calc(100% - 60px);
 
         input {
             outline: 0;
@@ -98,7 +98,7 @@ export const AddTask = styled.div`
         }
 
         button {
-            padding: 8px 12px;
+            padding: 8px 11px;
             color: #fff;
             outline: 0;
             border: 0;
@@ -117,7 +117,7 @@ export const AddTask = styled.div`
     }
 
     #show {
-        display: block;
+        display: flex;
     }
 
     #hide {

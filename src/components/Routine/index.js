@@ -59,18 +59,19 @@ export default function Routine({ title, tasks, setTasks }) {
                     <input 
                         placeholder="New task..." 
                         name="newTask"
+                        className={ `input${title}` }
                     />
-                    <button type="submit">Add task</button>
+                    <button type="submit" className={`button${title}`}>Add task</button>
                 </form>
-                <button onClick={ handleDisplayForm } className="toggleShow">{ showForm === 'hide' ? 'Show' : 'Hide' }</button>
+                <button onClick={ handleDisplayForm } className='toggleShow'>{ showForm === 'hide' ? 'Show' : 'Hide' }</button>
             </AddTask>
 
-            <ul>
+            <ul className={ `routine${title}` } >
                 { tasks.map(task => (
                     <Task key={ task.id } id={ task.completed ? 'completed' : 'not-completed' }>
                         <Checkbox onClick={ () => handleCompleteTask(task.id) }><FaCheck /></Checkbox>
                         <Content>{ task.content }</Content>
-                        <Delete type="button" onClick={ () => handleDeleteTask(task.id) }><FiX /></Delete>
+                        <Delete type="button" onClick={ () => handleDeleteTask(task.id) } className='buttonDelete'><FiX /></Delete>
                     </Task>
                 )) }
             </ul>

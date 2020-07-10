@@ -8,3 +8,4 @@ This project is heavily inspired by Todoist. A while ago it was posted on the co
 - React
 - Styled Components
 - Context API
+- Cypress
